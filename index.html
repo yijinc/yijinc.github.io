@@ -114,7 +114,9 @@ li{list-style: none;}
           //初始化
           iNow = Math.floor(Math.random()*musicList.length);
           audio.src = "music/"+musicList[iNow]+".mp3";
-          audio.play();
+          audio.onloadeddata = function(){
+            audio.play();
+          }
           musicBox.getElementsByTagName("p")[0].innerHTML = musicList[iNow];
 
           for(var i=1; i<musicManu.length-1; i++){
