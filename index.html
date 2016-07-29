@@ -85,7 +85,7 @@ li{list-style: none;}
     </div>
 
 
-    <audio id="audio" src="">
+    <audio id="audio" src="music/鹿先森乐队 - 春风十里.mp3" controls>
             您的浏览器不支持 audio 标签。
     </audio>
 
@@ -114,6 +114,7 @@ li{list-style: none;}
           //初始化
           iNow = Math.floor(Math.random()*musicList.length);
           audio.src = "music/"+musicList[iNow]+".mp3";
+          audio.play();
           musicBox.getElementsByTagName("p")[0].innerHTML = musicList[iNow];
 
           for(var i=1; i<musicManu.length-1; i++){
