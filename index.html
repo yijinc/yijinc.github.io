@@ -1,324 +1,72 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv="X-UA-Compatible" content="chrome=1">
+        <meta name="keywords" content="yijinc,伊进才" />
+        <meta name="description" content="yijinc">
+        <title>yijinc</title>
+        <link rel="stylesheet" href="css/style.css" />
+        <script src="js/main.js"></script>
+    </head>
 
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="keywords" content="yijinc,伊进才" />
-    <meta name="description" content="yijinc">
+<body>
 
-    <title>yijinc</title>
-
-
-    <style>
-body,h1,h2,h3,h4,h5,h6,p,ul,ol,li {
-  margin: 0;
-  padding: 0;
-}
-article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary { 
-  display: block;
-}
-a{text-decoration: none;}
-li{list-style: none;}
-#header_wrap {
-	width: 100%;
-	border-top: 1px solid #ccc;
-    background: #212121;
-    background: -moz-linear-gradient(top, #373737, #212121);
-    background: -webkit-linear-gradient(top, #373737, #212121);
-    background: -ms-linear-gradient(top, #373737, #212121);
-    background: -o-linear-gradient(top, #373737, #212121);
-    background: linear-gradient(top, #373737, #212121);
-}
-.container {
-    position: relative;
-    width: 1000px;
-    margin: 0 auto;
-    overflow: hidden;
-}
-.container:after{
-	display: block;
-	content: "";
-	clear: both;
-}
-.nav>ul>li{
-	float: left;	
-}
-.nav>ul>li>a{
-	color: #ccc;
-	height:50px;
-	font:16px/50px Arial;
-	padding:0 20px;
-	display: block;
-}
-.nav>ul>li>a:hover{
-	color: #fff;
-	background-color: #373737;
-}
-
-.navbar-toggle {
-    position: relative;
-    float: right;
-    padding: 9px 10px;
-    margin-top: 8px;
-    margin-right: 15px;
-    margin-bottom: 8px;
-    background-color: transparent;
-    background-image: none;
-    border: 1px solid #333;
-    border-radius: 4px;
-}
-.navbar-toggle span {
-    background-color: #fff;
-    display: block;
-    width: 22px;
-    height: 2px;
-    margin-top: 4px;
-    border-radius: 1px;
-}
-
-
-@media (min-width: 1200px){
-	.inner {
-    	width: 1170px;
-	}
-}
-
-@media (min-width: 992px){
-	.inner {
-    	width: 970px;
-	}
-}
-
-@media (min-width: 768px){
-	.navbar {
-    	float: left;
-	}
-	.navbar-toggle {
-    	display: none;
-	}
-}
-
-@media (max-width: 768px){
-	.nav{
-		display: none;
-	}
-}
-#music { position:relative; left:20px; margin-bottom:12px; width:210px; height:30px; }
-#music p { position:absolute; top:-30px; left:0; width:210px; height:30px; filter:alpha(opacity=0); opacity:0; line-height:30px; color:#666; text-align:center; }
-#music .wrap { width:210px; height:30px; overflow:hidden; position:relative; }
-#music ul { width:210px; height:30px; position:absolute; top:0; left:0; background:#171717; }
-#music li { width:30px; height:30px; float:left; position:relative; cursor:pointer; }
-#music span { display:block; width:30px; height:30px; position:relative; z-index:2; }
-#music strong { position:absolute; top:0; left:0; width:30px; height:30px; background:#53b32a; filter:alpha(opacity=0); opacity:0; }
-#music .music_a1 { background:url(images/music_a1.png) no-repeat center; }
-#music .music_b1 { background:url(images/music_b1.png) no-repeat center; }
-#music .music_c1 { background:url(images/music_c1.png) no-repeat center; }
-#music .music_c2 { background:url(images/music_c2.png) no-repeat center; }
-#music .music_d1 { background:url(images/music_d1.png) no-repeat center; }
-#music .music_e1 { background:url(images/music_e1.png) no-repeat center; }
-#music .music_e2 { background:url(images/music_e2.png) no-repeat center; }
-#music .sound { width:50px; left:5px; }
-#music .sound div { height:3px; overflow:hidden; position:absolute; top:13px; left:0; }
-#music .sound1 { width:50%; background:#303030; z-index:2; }
-#music .sound2 { width:100%; background:#535353; z-index:1; }
-
-    </style>
-  </head>
-
-  <body>
-
-  <div id="header_wrap">
-  	<header class="container">
-  		<div class="navbar">
-  			<a href="">aaaa</a>
-  			<button class="navbar-toggle" type="button">
-  	            <span></span>
-  	            <span></span>
-  	            <span></span>
-          	</button>
-  		</div>
-  		<div class="nav">
-  			<ul>
-  				<li><a href="">网站首页</a></li>
-  				<li><a href="">前端技术</a></li>
-  				<li><a href="">生活创作</a></li>
-  				<li><a href="">音乐电影</a></li>
-  				<li><a href="">散文小说</a></li>
-  			</ul>
-  		</div>
-  	</header>
-</div>
-
-    <div id="music">
-      <p style="opacity: 0;">拥抱 - 谭维维</p>
-      <div class="wrap">
-        <ul>
-          <li>
-            <span class="music_a1"></span>
-            <strong style="opacity: 1;"></strong>
-          </li>
-          <li>
-            <span class="music_b1"></span>
-            <strong style="opacity: 0;"></strong>
-          </li>
-          <li>
-            <span class="music_c1"></span>
-            <strong style="opacity: 0;"></strong>
-          </li>
-          <li>
-            <span class="music_d1"></span>
-            <strong style="opacity: 0;"></strong>
-          </li>
-          <li>
-            <span class="music_e1"></span>
-            <strong></strong>
-          </li>
-          <li class="sound">
-            <div class="sound1"></div>
-            <div class="sound2"></div>
-          </li>
-        </ul>
-      </div>
+    <div id="header_wrap">
+      	<header class="container">
+        		<div class="navbar">
+        			  <button id="navbar-toggle" type="button">
+      	            <span></span>
+      	            <span></span>
+      	            <span></span>
+                </button>
+                 <a href="/">gitHub</a>
+        		</div>
+        		<div id="nav">
+          			<ul>
+            				<li><a href="">网站首页</a></li>
+            				<li><a href="">前端技术</a></li>
+            				<li><a href="">生活创作</a></li>
+            				<li><a href="">音乐电影</a></li>
+            				<li><a href="">散文小说</a></li>
+          			</ul>
+        		</div>
+      	</header>
     </div>
 
+    <div id="music">
+        <p style="opacity: 0;">拥抱 - 谭维维</p>
+        <div class="wrap">
+            <ul>
+                <li>
+                    <span class="music_a1"></span>
+                    <strong style="opacity: 1;"></strong>
+                </li>
+                <li>
+                    <span class="music_b1"></span>
+                    <strong style="opacity: 0;"></strong>
+                </li>
+                <li>
+                    <span class="music_c1"></span>
+                    <strong style="opacity: 0;"></strong>
+                </li>
+                <li>
+                    <span class="music_d1"></span>
+                    <strong style="opacity: 0;"></strong>
+                </li>
+                <li>
+                    <span class="music_e1"></span>
+                    <strong></strong>
+                </li>
+                <li class="sound">
+                    <div class="sound1"></div>
+                    <div class="sound2"></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <audio id="audio" src="" loop="loop"><!--您的浏览器不支持 audio 标签。--></audio>
 
-    <audio id="audio" src="http://sc.111ttt.com/up/mp3/264456/D2A9DD2A70FD8A7A56F0618D41674925.mp3">
-          <!--  您的浏览器不支持 audio 标签。-->
-    </audio>
-
-
-    <script type="text/javascript">
-        window.onload = function(){
-
-          var musicList = [
-            "http://sc.111ttt.com/up/mp3/4929/0FC370EBBEB40759375F59F17AF32588.mp3",
-            "http://sc.111ttt.com/up/mp3/2066/8332AC17EFAE8084E42CD6AB0D5DB2B9.mp3",
-            "http://sc.111ttt.com/up/mp3/158242/B0E74A31492A51CC50F57D0C4017552F.mp3",
-            "http://sc.111ttt.com/up/mp3/184769/315D3DC50A9287CE80934485C081C69D.mp3",
-            "http://sc.111ttt.com/up/mp3/264456/D2A9DD2A70FD8A7A56F0618D41674925.mp3"
-          ], 
-          iNow = 0;
-
-          var audio = document.getElementById('audio');
-          var musicBox = document.getElementById('music');
-          var musicManu = musicBox.getElementsByTagName("li");
-
-          //初始化
-          iNow = Math.floor(Math.random()*musicList.length);
-          audio.src = musicList[iNow];
-          audio.onloadeddata = function(){
-            audio.play();
-          }
-          musicBox.getElementsByTagName("p")[0].innerHTML = musicList[iNow];
-
-          for(var i=1; i<musicManu.length-1; i++){
-              musicManu[i].addEventListener("mouseover", function(){
-                startMove(this.getElementsByTagName("strong")[0],{"opacity":100});
-                startMove(musicBox.getElementsByTagName("p")[0],{"opacity":100});
-              });
-              musicManu[i].addEventListener("mouseout", function(){
-                startMove(this.getElementsByTagName("strong")[0],{"opacity":0});
-                startMove(musicBox.getElementsByTagName("p")[0],{"opacity":0});
-              });
-          }
-          musicManu[1].addEventListener("click", function(){
-            !audio.paused&audio.pause();
-            iNow <= 0 ? iNow=musicList.length-1 : iNow--;
-            audio.src=musicList[iNow];
-            musicBox.getElementsByTagName("p")[0].innerHTML = musicList[iNow];
-            audio.play();
-          });
-
-          musicManu[2].addEventListener("click", function(){
-            var thatSpan = this.getElementsByTagName("span")[0];
-            audio.paused ? 
-              (function() {
-                audio.play();
-                thatSpan.className="music_c2";
-              })() : 
-              (function() {
-                audio.pause();
-                thatSpan.className="music_c1";
-              })();
-          });
-
-          musicManu[3].addEventListener("click", function(){
-            !audio.paused&audio.pause();
-            iNow >= musicList.length-1 ? iNow=0 : iNow++ ;
-            audio.src=musicList[iNow];
-            musicBox.getElementsByTagName("p")[0].innerHTML = musicList[iNow];
-            audio.play();
-          });
-
-          musicManu[4].addEventListener("click", function(){
-            this.getElementsByTagName("span")[0].className = (function() {
-                return audio.muted ? "music_e1" : "music_e2";
-              })();
-            audio.muted = !audio.muted;
-          });
-
-          musicManu[5].addEventListener("click", function(event){
-            var L = this.offsetLeft;
-            var sound = this.getElementsByTagName("div")[0];
-            var event = event || window.event;
-            var W = event.clientX - L- musicBox.offsetLeft;
-            sound.style.width = W +"px";
-            audio.volume = W/50;
-          });
-
-        }
-
-
-
-
-
-////common
-        function startMove(obj,json,fn){
-          clearInterval(obj.timer);
-          obj.timer = setInterval(function(){
-            
-            var bBtn = true;
-            
-            for(var attr in json){
-              
-              var iCur = 0;
-              if(attr == 'opacity'){
-                iCur = Math.round(getStyle(obj,attr)*100);
-              }
-              else{
-                iCur = parseInt(getStyle(obj,attr));
-              }
-              
-              var iSpeed = (json[attr] - iCur)/5;
-              iSpeed = iSpeed > 0 ? Math.ceil(iSpeed) : Math.floor(iSpeed);
-            
-              if(iCur != json[attr]){
-                
-                bBtn = false;
-              }
-              
-              if(attr == 'opacity'){
-                obj.style.filter = 'alpha(opacity='+(iCur+iSpeed)+')';
-                obj.style.opacity = (iCur + iSpeed)/100;
-              }
-              else{
-                obj.style[attr] = iCur + iSpeed + 'px';
-              }
-            }
-            
-            if(bBtn){
-              clearInterval(obj.timer);
-              fn && fn.call(obj);
-            }
-          },30);
-        }
-
-        function getStyle(obj,attr){
-          return obj.currentStyle?obj.currentStyle[attr]:getComputedStyle(obj,250)[attr];
-        }
-
-    </script>
 
 
 
