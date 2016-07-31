@@ -4,14 +4,16 @@ var yjc = {
         obj.timer = setInterval(function(){
             var bBtn = true;
             for(var attr in json){
-              var iCur = 0;
+              var iSpeed = 0, iCur = 0;
               if(attr == 'opacity'){
                 iCur = Math.round(yjc.getStyle(obj,attr)*100);
+                iSpeed = (json[attr] - iCur)/5;
               }
               else{
                 iCur = parseInt(yjc.getStyle(obj,attr));
+                iSpeed = (json[attr] - iCur)/5;
               }
-              var iSpeed = (json[attr] - iCur)/5;
+         
               iSpeed = iSpeed > 0 ? Math.ceil(iSpeed) : Math.floor(iSpeed);
               if(iCur != json[attr]){ 
                 bBtn = false;
@@ -47,25 +49,35 @@ var yjc = {
     			var event = event || window.event;
     			var L = event.clientX - posX;
     			var T = event.clientY - posY;
+    			if(L<=0) 
+					L = 0;
+				else if(L>document.documentElement.clientWidth-obj.offsetWidth)
+					L=document.documentElement.clientWidth-obj.offsetWidth;
+				if(T<=0)
+					T=0;
+				else if(T > document.documentElement.clientHeight-obj.offsetHeight)
+					T=document.documentElement.clientHeight-obj.offsetHeight;
 
-    			obj.style.left = event.clientX - posX + "px";
-    			obj.style.top = event.clientY - posY + "px";
+    			obj.style.left = event.clientX - L + "px";
+    			obj.style.top = event.clientY - T + "px";
     			document.onmouseup = function(){
     				document.onmousemove = null;
     				document.onmouseup = null;
     			}
     		}
+    		return false;
     	}
     }
 }
 
 
+
 window.onload = function(){
 
-  	var musicList = [
+  	var musicData = [
   		{
   			name : "马頔-南山南",
-  			url : "http://sc.111ttt.com/up/mp3/2066/8332AC17EFAE8084E42CD6AB0D5DB2B9.mp3"
+  			url : "http://sc.111ttt.com/up/mp3/22483/8332AC17EFAE8084E42CD6AB0D5DB2B9.mp3"
   		},
 	  	{
 	  		name : "赵雷-南方姑娘",
@@ -82,24 +94,27 @@ window.onload = function(){
   		{
   			name : "王峥嵘-唱歌的孩子",
   			url : "http://sc.111ttt.com/up/mp3/351806/CB23F9848082C01601DAE3D61317B3AB.mp3"
+  		},
+  		{
+  			name :"卡农-小清新",
+  			url : "http://sc.111ttt.com/up/mp3/241238/A55AE96E1343552AAF7AD74422BF5D13.mp3"
   		}
-  	], 
+  	],
   	iNow = 0;
 
-    var audio = document.getElementById('audio');
+    var audio = document.createElement('audio');
     var musicBox = document.getElementById('music');
     var musicName = musicBox.getElementsByTagName("p")[0];
     var musicManu = musicBox.getElementsByTagName("li");
 
   	//初始化
-  	iNow = Math.floor(Math.random()*musicList.length);
-  	audio.src = musicList[iNow].url;
-  	musicBox.getElementsByTagName("p")[0].innerHTML = musicList[iNow].name;
+  	iNow = Math.floor(Math.random()*musicData.length);
+  	audio.src = musicData[iNow].url;
+  	musicName.innerHTML = musicData[iNow].name;
 
   	audio.onloadeddata = function(){
     	audio.play();
   	}
-
 
   	for(var i=1; i<musicManu.length-1; i++){
       	musicManu[i].addEventListener("mouseover", function(){
@@ -112,37 +127,18 @@ window.onload = function(){
       	});
   	}
 
-  	var posX = 0, posY = 0;
-	musicManu[0].onmousedown = function(event){
-		var event = event || window.event;
-		posX = event.clientX - musicBox.offsetLeft;
-		posY = event.clientY - musicBox.offsetTop;
-		document.onmousemove = function(event){
-			var event = event || window.event;
-			var L = event.clientX - posX;
-			var T = event.clientY - posY;
-			if(L<=0) 
-				L = 0;
-			else if(L>document.documentElement.clientWidth-musicBox.offsetWidth)
-				L=document.documentElement.clientWidth-musicBox.offsetWidth;
-			if(T<=0)
-				T=0;
-			else if(T > document.documentElement.clientHeight-musicBox.offsetHeight)
-				T=document.documentElement.clientHeight-musicBox.offsetHeight;
-
-			musicBox.style.left = L + "px";
-			musicBox.style.top = T + "px";
-			document.onmouseup = function(){
-				document.onmousemove = null;
-				document.onmouseup = null;
-			}
-		}
-	}
+  	musicManu[0].onclick =  function(){
+    	var oWrap = musicBox.getElementsByTagName("div")[0];
+    	yjc.startMove(musicBox,{"left":-210},function(){
+    		oWrap.style.width=="30px"? oWrap.style.width="210px":oWrap.style.width="30px";
+    		yjc.startMove(musicBox,{"left":0});
+    	});
+    }
 
   	musicManu[1].onclick = function(){
-    	iNow <= 0 ? iNow=musicList.length-1 : iNow--;
-    	audio.src = musicList[iNow].url;
-  		musicBox.getElementsByTagName("p")[0].innerHTML = musicList[iNow].name;
+    	iNow <= 0 ? iNow=musicData.length-1 : iNow--;
+    	audio.src = musicData[iNow].url;
+  		musicName.innerHTML = musicData[iNow].name;
   	}
 
   	musicManu[2].onclick = function(){
@@ -159,9 +155,9 @@ window.onload = function(){
   	}
 
   	musicManu[3].onclick = function(){
-    	iNow >= musicList.length-1 ? iNow=0 : iNow++ ;
-    	audio.src = musicList[iNow].url;
-  		musicBox.getElementsByTagName("p")[0].innerHTML = musicList[iNow].name;
+    	iNow >= musicData.length-1 ? iNow=0 : iNow++ ;
+    	audio.src = musicData[iNow].url;
+  		musicName.innerHTML = musicData[iNow].name;
   	}
 
   	musicManu[4].onclick = function(){
@@ -179,18 +175,8 @@ window.onload = function(){
     	sound.style.width = W +"px";
     	audio.volume = W/50;
   	}
-
-  	document.getElementById("navbar-toggle").onclick = function(){
-  		var oNav = document.getElementById("nav");
-  		yjc.getStyle(oNav,"display")=="none"? (function(){
-  				oNav.style.height==0;
-  				oNav.style.display=="block";
-  				yjc.startMove(oNav,{"height":"auto"});
-  			})() : 
-  			(function(){
-
-  			})();
-  	}
+    
+    yjc.drap(document.getElementById("photo_wrap"));
 
 }
 

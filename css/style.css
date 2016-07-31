@@ -11,6 +11,15 @@ article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summ
 }
 a{text-decoration: none;}
 li{list-style: none;}
+.fr{
+	float: right;
+}
+.fl{
+	float: left;
+}
+.cf{
+	clear: both;
+}
 #header_wrap {
 	  width: 100%;
 	  border-top: 1px solid #ccc;
@@ -23,6 +32,7 @@ li{list-style: none;}
 }
 .container {
 	    position: relative;
+	    width: 900px;
 	    margin: 0 auto;
 	    padding: 0 15px;
 	    overflow: hidden;
@@ -32,8 +42,8 @@ li{list-style: none;}
 	content: "";
 	clear: both;
 }
-#nav{
-	/*display: none;*/
+#nav>ul>li{
+		float: left;	
 }
 #nav>ul>li>a{
 	color: #ccc;
@@ -46,11 +56,6 @@ li{list-style: none;}
 	color: #fff;
 	background-color: #373737;
 }
-.navbar:after{
-	display: block;
-	content: "";
-	clear: both;
-}
 .navbar>a{
 	float: left;
     padding: 15px 20px;
@@ -59,61 +64,136 @@ li{list-style: none;}
     margin-right: 20px;
     color: #ccc;
 }
-#navbar-toggle {
-    position: relative;
-    float: right;
-    padding: 9px 10px;
-    margin-top: 6px;
-    margin-right: 15px;
-    margin-bottom: 6px;
-    background-color: transparent;
-    background-image: none;
-    border: 1px solid #333;
+.banner{
+	width:100%;
+	background:#deecdf; 
+	padding-top:210px;
+}
+.banner h1,.banner p{
+	text-align: center;
+}
+.banner h1 {
+	font-size: 40px;
+}
+.banner p {
+	margin-bottom: 40px;
+}
+.banner h1 strong {
+	color: #00cfbd;
+}
+.study-section{
+	padding: 40px 0;
+}
+.study-section .list{
+	width: 50%;
+	color: #393b3a;
+}
+.study-section .list h3 {
+	font-size: 30px;
+	margin-bottom: 10px;
+}
+.study-section .list h4{
+	font-size: 18px;
+}
+.study-section .list h4:first-child{
+	margin-top: 30px;
+}
+.study-section .list h3 span{
+	color: #00cfbd;
+}
+
+.study-section .list p {
+    font-size: 1.2em;
+    padding: 1.1em 0 0 0;
+}
+.study-section .list label{
+	font-size: 0.8em;
+    color: #9CA69D;
+    margin: 0 0 0 7px;
+}
+.study-section .progress {
+    margin: 10px 0;
+    height: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: #f5f5f5;
     border-radius: 4px;
 }
-#navbar-toggle span {
-    background-color: #fff;
-    display: block;
-    width: 22px;
-    height: 2px;
-    margin-top: 4px;
-    border-radius: 1px;
+.study-section .progress div {
+    float: left;
+    width: 0;
+    height: 100%;
+    font-size: 12px;
+    line-height: 20px;
+    color: #fff;
+    text-align: center;
+}
+.study-section .progress .complete-1 {
+    background-color: #DEECDF;
+    width: 70%;
+}
+.study-section .progress .complete-2 {
+    background-color: #ACB5B8;
+    width: 50%;
+}
+.study-section .progress .complete-3 {
+	background-color: #78B3AE;
+	width: 60%;
+}
+.study-section .progress .complete-4 {
+    background-color: #8C9D82;
+    width: 40%;
+}
+.study-section .progress span {
+    color: #00cfbd;
+    font-size: 0.9em;
+    display: none;
+}
+.study-section .progress div:hover span{
+	display: block;
+}
+.study-section .progress .complete-1 span{
+	color: #4caf50;
+}
+.study-section .progress .complete-2 span{
+	color: #e4e029;
+}
+.study-section .progress .complete-3 span{
+	color: #795548;
+}
+.study-section .progress .complete-4 span{
+	color: #bf351e;
+}
+
+#photo_wrap{
+	position: absolute;
+	width: 160px;
+	height: 160px;
+	border-radius: 50%;
+	top:80px;
+	left: 50%;
+	z-index: 2;
+	margin-left: -80px;
+	-webkit-animation:circle 30s infinite linear;/*匀速 循环*/
+}
+@-webkit-keyframes circle{
+	0%{ transform:rotate(0deg); }
+	100%{ transform:rotate(360deg); }
+}
+
+
+#footer_wrap{
+	width: 100%;
+	padding-bottom: 20px;
+}
+#footer_wrap p{
+	text-align: center;
 }
 
 
 
-@media (min-width: 768px){
-	.container {
-	    width: 750px;
-	}
-	.navbar {
-    	float: left;
-	}
-	#navbar-toggle {
-    	display: none;
-	}
-	#nav{
-		display: block;
-	}
-	#nav>ul>li{
-		float: left;	
-	}
-}
 
-@media (min-width: 992px){
-	.container {
-    	width: 970px;
-	}
-}
-
-@media (min-width: 1200px){
-	.container {
-    	width: 1170px;
-	}
-}
-
-
-#music { position:absolute; left:0; bottom: 0px; margin-bottom:12px; width:210px; height:30px; }
+#music { position:absolute; left:0; bottom: 33px; margin-bottom:12px; width:210px; height:30px; }
 #music p { position:absolute; font-size: 12px; top:-30px; left:0; width:210px; height:30px; filter:alpha(opacity=0); opacity:0; line-height:30px; color:#666; text-align:center; }
 #music .wrap { width:210px; height:30px; overflow:hidden; position:relative; }
 #music ul { width:210px; height:30px; position:absolute; top:0; left:0; background:#171717; }
