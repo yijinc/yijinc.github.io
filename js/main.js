@@ -40,40 +40,72 @@ var yjc = {
     },
 
     drap : function(obj){
-    	var posX = 0, posY = 0;
-    	obj.onmousedown = function(event){
-    		var event = event || window.event;
-    		posX = event.clientX - obj.offsetLeft;
-    		posY = event.clientY - obj.offsetTop;
-    		document.onmousemove = function(event){
-    			var event = event || window.event;
-    			var L = event.clientX - posX;
-    			var T = event.clientY - posY;
-    			if(L<=0) 
-					L = 0;
-				else if(L>document.documentElement.clientWidth-obj.offsetWidth)
-					L=document.documentElement.clientWidth-obj.offsetWidth;
-				if(T<=0)
-					T=0;
-				else if(T > document.documentElement.clientHeight-obj.offsetHeight)
-					T=document.documentElement.clientHeight-obj.offsetHeight;
+        var posX = 0;
+        var posY = 0;
+        obj.onmousedown = function(ev){
+            var ev = ev || window.event;
+            posX = ev.clientX - obj.offsetLeft;
+            posY = ev.clientY - obj.offsetTop;
 
-    			obj.style.left = event.clientX - L + "px";
-    			obj.style.top = event.clientY - T + "px";
-    			document.onmouseup = function(){
-    				document.onmousemove = null;
-    				document.onmouseup = null;
-    			}
-    		}
-    		return false;
-    	}
+            document.onmousemove = function(ev){
+                var ev = ev || window.event;
+                obj.style.left = getLeft(ev.clientX - posX) + "px";
+                obj.style.top =  getTop(ev.clientY - posY) + "px";
+            }
+
+            document.onmouseup = function(){
+                document.onmousemove = null;
+                document.onmouseup = null;
+            }
+            return false;
+        }
+
+        // 绑定touchstart事件
+        obj.addEventListener("touchstart", function(e) {
+            var touches = e.touches[0];
+            posX = touches.clientX - obj.offsetLeft;
+            posY = touches.clientY - obj.offsetTop;
+            //阻止页面的滑动默认事件
+            document.addEventListener("touchmove",function (e) {
+                e.preventDefault()
+            });
+
+            obj.addEventListener("touchmove", function(e) {
+                var touches = e.touches[0];
+                obj.style.left = getLeft(touches.clientX - posX) + "px";
+                obj.style.top = getTop(touches.clientY - posY) + "px";
+
+                obj.addEventListener("touchend",function() {
+                    document.removeEventListener("touchmove",function (e) {
+                        e.preventDefault()
+                    });
+                });
+            });
+        });
+ 
+        function getTop(iCur){
+            if(iCur<0)
+                iCur = 0
+            if(iCur>document.documentElement.clientHeight - obj.offsetHeight)
+                iCur = document.documentElement.clientHeight - obj.offsetHeight;
+            return iCur
+        }
+        function getLeft(iCur){
+            if(iCur<0)
+                iCur = 0
+            if(iCur>document.documentElement.clientWidth - obj.offsetWidth)
+                iCur = document.documentElement.clientWidth - obj.offsetWidth;
+            return iCur
+        }
     }
+        
 }
 
 
 
 window.onload = function(){
-
+    var head = document.getElementById("photo_wrap");
+    head.style.left = (document.documentElement.clientWidth - head.offsetWidth)/2 +"px";
   	var musicData = [
   		{
   			name : "马頔-南山南",
