@@ -108,28 +108,28 @@ window.onload = function(){
     head.style.left = (document.documentElement.clientWidth - head.offsetWidth)/2 +"px";
   	var musicData = [
   		{
-  			name : "马頔-南山南",
-  			url : "http://sc.111ttt.com/up/mp3/22483/8332AC17EFAE8084E42CD6AB0D5DB2B9.mp3"
+  			name : "赵雷 - 成都",
+  			url : "http://sc1.111ttt.com/2016/1/12/04/205041718593.mp3"
   		},
 	  	{
-	  		name : "赵雷-南方姑娘",
-	  		url : "http://sc.111ttt.com/up/mp3/158242/B0E74A31492A51CC50F57D0C4017552F.mp3"
+	  		name : "宋冬野 - 安和桥",
+	  		url : "http://up.mcyt.net/md5/17/NTAwMjY4Nw_Qq4329912.mp3"
 	  	},
 	  	{
-  			name : "阿肆-预谋邂逅 ",
-  			url : "http://sc.111ttt.com/up/mp3/184769/315D3DC50A9287CE80934485C081C69D.mp3"
+  			name : "陈鸿宇 - 理想三旬",
+  			url : "http://sc1.111ttt.com/2015/5/08/15/101151853006.mp3"
   		},
   		{
-  			name: "许巍-曾经的你",
-  			url : "http://sc.111ttt.com/up/mp3/199730/B2005B6B9EFDDF5F6585A4BE884EACF0.mp3"
+  			name: "谢春花 - 借我",
+  			url : "http://up.mcyt.net/md5/53/NzA0MDkxMg_Qq4329912.mp3"
   		},
   		{
-  			name : "王峥嵘-唱歌的孩子",
-  			url : "http://sc.111ttt.com/up/mp3/351806/CB23F9848082C01601DAE3D61317B3AB.mp3"
+  			name : "日向大介 - 24／7",
+  			url : "http://sc1.111ttt.com/2015/1/09/25/102251005125.mp3"
   		},
   		{
-  			name :"卡农-小清新",
-  			url : "http://sc.111ttt.com/up/mp3/241238/A55AE96E1343552AAF7AD74422BF5D13.mp3"
+  			name :"黄英华 - 只要为你活一天",
+  			url : "http://sc1.111ttt.com/2015/1/05/02/98022140539.mp3"
   		}
   	],
   	iNow = 0;
