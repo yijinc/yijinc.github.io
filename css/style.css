@@ -165,40 +165,36 @@ li{list-style: none;}
     color: #fff;
     text-align: center;
 }
-.study-section .progress .complete-1 {
+.study-section .progress:nth-of-type(1) > div{
     background-color: #DEECDF;
-    width: 70%;
 }
-.study-section .progress .complete-2 {
-    background-color: #ACB5B8;
-    width: 50%;
+.study-section .progress:nth-of-type(2) > div{
+	background-color: #ACB5B8;
 }
-.study-section .progress .complete-3 {
+.study-section .progress:nth-of-type(3) > div{
 	background-color: #78B3AE;
-	width: 60%;
 }
-.study-section .progress .complete-4 {
-    background-color: #8C9D82;
-    width: 40%;
+.study-section .progress:nth-of-type(4) > div{
+	background-color: #8C9D82;
 }
 .study-section .progress span {
     color: #00cfbd;
     font-size: 0.9em;
     display: none;
 }
-.study-section .progress div:hover span{
+.study-section .progress:hover span{
 	display: block;
 }
-.study-section .progress .complete-1 span{
+.study-section .progress:nth-of-type(1) span{
 	color: #4caf50;
 }
-.study-section .progress .complete-2 span{
+.study-section .progress:nth-of-type(2) span{
 	color: #e4e029;
 }
-.study-section .progress .complete-3 span{
+.study-section .progress:nth-of-type(3) span{
 	color: #795548;
 }
-.study-section .progress .complete-4 span{
+.study-section .progress:nth-of-type(4) span{
 	color: #bf351e;
 }
 

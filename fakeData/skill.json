@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Angular",
+    "rate": 0.8,
+    "skilled": "master"
+  },
+  {
+    "name": "React",
+    "rate": 0.6,
+    "skilled": "general"
+  },
+  {
+    "name": "vue",
+    "rate": 0.5,
+    "skilled": "warning"
+  },
+  {
+    "name": "Java",
+    "rate": 0.4,
+    "skilled": "danger"
+  }
+]

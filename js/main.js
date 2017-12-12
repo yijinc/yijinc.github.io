@@ -1,109 +1,18 @@
-var yjc = {
-	startMove : function(obj,json,fn){
-        clearInterval(obj.timer);
-        obj.timer = setInterval(function(){
-            var bBtn = true;
-            for(var attr in json){
-              var iSpeed = 0, iCur = 0;
-              if(attr == 'opacity'){
-                iCur = Math.round(yjc.getStyle(obj,attr)*100);
-                iSpeed = (json[attr] - iCur)/5;
-              }
-              else{
-                iCur = parseInt(yjc.getStyle(obj,attr));
-                iSpeed = (json[attr] - iCur)/5;
-              }
-         
-              iSpeed = iSpeed > 0 ? Math.ceil(iSpeed) : Math.floor(iSpeed);
-              if(iCur != json[attr]){ 
-                bBtn = false;
-              }
-              
-              if(attr == 'opacity'){
-                obj.style.filter = 'alpha(opacity='+(iCur+iSpeed)+')';
-                obj.style.opacity = (iCur + iSpeed)/100;
-              }
-              else{
-                obj.style[attr] = iCur + iSpeed + 'px';
-              }
-            }
-            
-            if(bBtn){
-              clearInterval(obj.timer);
-              fn && fn.call(obj);
-            }
-        }, 30);
-    },
-
-    getStyle : function(obj,attr){
-          return obj.currentStyle?obj.currentStyle[attr]:getComputedStyle(obj,250)[attr];
-    },
-
-    drap : function(obj){
-        var posX = 0;
-        var posY = 0;
-        obj.onmousedown = function(ev){
-            var ev = ev || window.event;
-            posX = ev.clientX - obj.offsetLeft;
-            posY = ev.clientY - obj.offsetTop;
-
-            document.onmousemove = function(ev){
-                var ev = ev || window.event;
-                obj.style.left = getLeft(ev.clientX - posX) + "px";
-                obj.style.top =  getTop(ev.clientY - posY) + "px";
-            }
-
-            document.onmouseup = function(){
-                document.onmousemove = null;
-                document.onmouseup = null;
-            }
-            return false;
-        }
-
-        // 绑定touchstart事件
-        obj.addEventListener("touchstart", function(e) {
-            var touches = e.touches[0];
-            posX = touches.clientX - obj.offsetLeft;
-            posY = touches.clientY - obj.offsetTop;
-            //阻止页面的滑动默认事件
-            document.addEventListener("touchmove",function (e) {
-                e.preventDefault()
-            });
-
-            obj.addEventListener("touchmove", function(e) {
-                var touches = e.touches[0];
-                obj.style.left = getLeft(touches.clientX - posX) + "px";
-                obj.style.top = getTop(touches.clientY - posY) + "px";
-
-                obj.addEventListener("touchend",function() {
-                    document.removeEventListener("touchmove",function (e) {
-                        e.preventDefault()
-                    });
-                });
-            });
-        });
- 
-        function getTop(iCur){
-            if(iCur<0)
-                iCur = 0
-            if(iCur>document.documentElement.clientHeight - obj.offsetHeight)
-                iCur = document.documentElement.clientHeight - obj.offsetHeight;
-            return iCur
-        }
-        function getLeft(iCur){
-            if(iCur<0)
-                iCur = 0
-            if(iCur>document.documentElement.clientWidth - obj.offsetWidth)
-                iCur = document.documentElement.clientWidth - obj.offsetWidth;
-            return iCur
-        }
-    }
-        
-}
-
-
-
 window.onload = function(){
+
+	$.get('../fakeData/skill.json').then(function (res) {
+		let html = '';
+		for(let s of res) {
+			html += `<h4>${s.name}</h4>
+                     <div class="progress">
+                         <div style="width: ${s.rate*100+'%'}">
+                             <span> ${s.rate*100+'%'} Complete (${s.skilled})</span>
+                         </div>
+                     </div> `
+		}
+        document.getElementById('skills').innerHTML = html;
+    });
+
     var head = document.getElementById("photo_wrap");
     head.style.left = (document.documentElement.clientWidth - head.offsetWidth)/2 +"px";
   	var musicData = [
@@ -150,20 +59,20 @@ window.onload = function(){
 
   	for(var i=1; i<musicManu.length-1; i++){
       	musicManu[i].addEventListener("mouseover", function(){
-        	yjc.startMove(this.getElementsByTagName("strong")[0],{"opacity":100});
-        	yjc.startMove(musicBox.getElementsByTagName("p")[0],{"opacity":100});
+        	$.startMove(this.getElementsByTagName("strong")[0],{"opacity":100});
+        	$.startMove(musicBox.getElementsByTagName("p")[0],{"opacity":100});
       	});
       	musicManu[i].addEventListener("mouseout", function(){
-        	yjc.startMove(this.getElementsByTagName("strong")[0],{"opacity":0});
-        	yjc.startMove(musicBox.getElementsByTagName("p")[0],{"opacity":0});
+        	$.startMove(this.getElementsByTagName("strong")[0],{"opacity":0});
+        	$.startMove(musicBox.getElementsByTagName("p")[0],{"opacity":0});
       	});
   	}
 
   	musicManu[0].onclick =  function(){
     	var oWrap = musicBox.getElementsByTagName("div")[0];
-    	yjc.startMove(musicBox,{"left":-210},function(){
+    	$.startMove(musicBox,{"left":-210},function(){
     		oWrap.style.width=="30px"? oWrap.style.width="210px":oWrap.style.width="30px";
-    		yjc.startMove(musicBox,{"left":0});
+    		$.startMove(musicBox,{"left":0});
     	});
     }
 
@@ -208,7 +117,7 @@ window.onload = function(){
     	audio.volume = W/50;
   	}
     
-    yjc.drap(document.getElementById("photo_wrap"));
+    $.drap(document.getElementById("photo_wrap"));
 
 }
 
