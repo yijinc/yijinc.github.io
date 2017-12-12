@@ -1,6 +1,6 @@
 window.onload = function(){
 
-	$.get('../fakeData/skill.json').then(function (res) {
+	$.get('https://yijinc.github.io/home/fakeData/skill.json').then(function (res) {
 		let html = '';
 		for(let s of res) {
 			html += `<h4>${s.name}</h4>
