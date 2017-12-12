@@ -19,6 +19,7 @@ Music.prototype = {
         this.play(this.iNow);
 
         this.audio.onloadeddata = ()=>this.audio.play();
+        this.audio.onerror = ()=> this.next();
 
         for(let i=1; i<this.mMenu.length-1; i++){
             this.mMenu[i].addEventListener("mouseover", () => {
@@ -59,7 +60,7 @@ Music.prototype = {
                         <strong style="opacity: 0;"></strong>
                     </li>
                     <li>
-                        <span class="music_c1"></span>
+                        <span class="music_c2"></span>
                         <strong style="opacity: 0;"></strong>
                     </li>
                     <li>
@@ -80,6 +81,7 @@ Music.prototype = {
         this.oWrap = this.mBox.getElementsByTagName("div")[0];
         this.mMenu = this.mBox.getElementsByTagName("li");
         document.body.appendChild(this.mBox);
+        // 这里没有做图片onload再添加组件，可能出现icon延后出现的情况
     },
 
     toggle: function () {
