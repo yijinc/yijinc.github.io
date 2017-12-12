@@ -12,11 +12,11 @@ const $ = {
             for(var attr in json){
                 var iSpeed = 0, iCur = 0;
                 if(attr == 'opacity'){
-                    iCur = Math.round(yjc.getStyle(obj,attr)*100);
+                    iCur = Math.round($.getStyle(obj,attr)*100);
                     iSpeed = (json[attr] - iCur)/5;
                 }
                 else{
-                    iCur = parseInt(yjc.getStyle(obj,attr));
+                    iCur = parseInt($.getStyle(obj,attr));
                     iSpeed = (json[attr] - iCur)/5;
                 }
 
