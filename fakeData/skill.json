@@ -1,18 +1,18 @@
 [
   {
-    "name": "Angular",
-    "rate": 0.8,
-    "skilled": "master"
+    "name": "React-Native / Flutter",
+    "rate": 0.6,
+    "skilled": "warning"
   },
   {
     "name": "React",
-    "rate": 0.6,
+    "rate": 0.8,
     "skilled": "general"
   },
   {
-    "name": "vue",
-    "rate": 0.5,
-    "skilled": "warning"
+    "name": "Angular",
+    "rate": 0.7,
+    "skilled": "master"
   },
   {
     "name": "Java",

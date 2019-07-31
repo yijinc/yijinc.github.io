@@ -38,15 +38,14 @@ var musicData = [
 window.onload = function(){
 
 	$.get('https://yijinc.github.io/home/fakeData/skill.json').then(function (res) {
-		let html = '';
-		for(let s of res) {
-			html += `<h4>${s.name}</h4>
-                     <div class="progress">
-                         <div style="width: ${s.rate*100+'%'}">
-                             <span> ${s.rate*100+'%'} Complete (${s.skilled})</span>
-                         </div>
-                     </div> `
-		}
+		const html = res.map( i => (
+            `<h4>${i.name}</h4>
+            <div class="progress">
+                <div style="width: ${i.rate*100+'%'}">
+                    <span> ${i.rate*100+'%'} Complete (${i.skilled})</span>
+                </div>
+            </div>`
+        )).join('');
         document.getElementById('skills').innerHTML = html;
     });
 
