@@ -29,7 +29,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Run Script
-        run: npm install && npm run build
+        run: |
+          npm install
+          npm run build
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Build with Jekyll
@@ -51,3 +53,8 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
+      - name: console.log
+        run: |
+          pwd
+          ls
+          git branch
