@@ -45,6 +45,9 @@ const config = {
         },
         blog: {
           showReadingTime: true,
+          blogSidebarCount: 'ALL',
+          blogSidebarTitle: '最近发布',
+          postsPerPage: 1,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl: 'https://github.com/yijinc/yijinc.github.io',
@@ -125,7 +128,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Yijinc, Inc. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,
