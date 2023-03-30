@@ -37,10 +37,12 @@ jobs:
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
-          source: ./
+          source: ./build
           destination: ./_site
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
+        with:
+          path: ./_site/
 
   # Deployment job
   deploy:
@@ -57,4 +59,3 @@ jobs:
         run: |
           pwd
           ls
-          git branch
