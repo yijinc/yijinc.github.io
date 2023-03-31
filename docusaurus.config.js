@@ -6,7 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'fish的个人主页',
+  title: 'fish \'s home page',
   tagline: 'welcome',
   favicon: 'img/favicon.ico',
 
@@ -18,8 +18,8 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'fish的组织', // Usually your GitHub org/user name.
-  projectName: 'fish的项目', // Usually your repo name.
+  organizationName: 'my organization', // Usually your GitHub org/user name.
+  projectName: 'my project', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -46,7 +46,7 @@ const config = {
         blog: {
           showReadingTime: true,
           blogSidebarCount: 'ALL',
-          blogSidebarTitle: '最近发布',
+          blogSidebarTitle: 'Recent posts',
           postsPerPage: 1,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
@@ -67,18 +67,18 @@ const config = {
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'yijinc',
+        title: 'Home Page',
         logo: {
-          alt: 'yijinc logo',
+          alt: 'fish\'s logo',
           src: 'img/logo.svg',
         },
         items: [
-          {to: '/blog', label: '博客', position: 'left'},
+          {to: '/blog', label: 'Blog', position: 'left'},
           {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: '开发',
+            label: 'Coding',
           },
           {
             href: 'https://github.com/yijinc',
@@ -111,8 +111,8 @@ const config = {
                 href: 'https://codepen.io/yijinc',
               },
               {
-                label: 'Twitter',
-                href: 'https://twitter.com/Blue7Yijinc',
+                label: 'Leetcode',
+                href: 'https://leetcode.cn/u/yijinc',
               },
             ],
           },
