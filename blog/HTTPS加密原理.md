@@ -15,7 +15,8 @@ HTTP 有以下安全性问题：
 
 ### 对称加密
 
-![image.png](https://upload-images.jianshu.io/upload_images/5144799-6d8c0508a09202e6.png)
+![Symmetric-Key Encryption](../static/img/symmetric-key-encryption.png)
+
 
 对称密钥加密（Symmetric-Key Encryption），加密和解密使用同一密钥。
 
@@ -25,7 +26,7 @@ HTTP 有以下安全性问题：
 
 ### 非对称加密
 
-![image.png](https://upload-images.jianshu.io/upload_images/5144799-d165fe8211cb8eed.png)
+![Public-Key Encryption](../static/img/public-key-encryption.png)
 
 非对称密钥加密，又称公开密钥加密（Public-Key Encryption），加密和解密使用不同的密钥。
 
@@ -43,7 +44,7 @@ HTTPS 采用混合的加密机制：
 - 使用非对称密钥加密，传输对称密钥加密方式所需要的 Secret Key，从而保证安全性;
 - 获取到 Secret Key 后，再使用对称密钥加密方式进行通信，从而保证效率。（下图中的 Session Key 就是 Secret Key）
 
-![image.png](https://upload-images.jianshu.io/upload_images/5144799-86fd21a39b74a6cf.png)
+![How Https encryption works](../static/img/https-encryption-works.png)
 
 ### 认证
 
@@ -59,7 +60,7 @@ HTTPS 采用混合的加密机制：
 
 进行 HTTPS 通信时，服务器会把证书发送给客户端。客户端取得其中的公开密钥之后，先使用数字签名进行验证，如果验证通过，就可以开始通信了。
 
-![image.png](https://upload-images.jianshu.io/upload_images/5144799-c23f8c4f803c8c30.png)
+![Certification Signature](../static/img/certificate-signing-verification.png)
 
 数字签名的制作过程：
 
