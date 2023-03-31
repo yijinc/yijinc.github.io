@@ -1,5 +1,4 @@
 import React from 'react';
-import clsx from 'clsx';
 import styles from './styles.module.css';
 
 type FeatureItem = {
@@ -39,7 +38,7 @@ const FeatureList: FeatureItem[] = [
 
 function Feature({title, description}: FeatureItem) {
   return (
-    <div className={clsx('col col--4')}>
+    <div className="col col--4">
       <div className="text--center">
       </div>
       <div className="text--center padding-horiz--md">
