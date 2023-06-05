@@ -4,6 +4,21 @@ date: 2019-09-21
 tags: [git]
 ---
 
+## git config
+
+```bash
+
+# 设置用户名和邮箱（--local 仅在当前仓库设置，全局使用 --global，系统 --system ）
+git config user.name yijinc --local
+git config user.name yijinc@org.com --local
+
+# 设置大小写敏感 （需要在每个项目中各自设置 ignorecase）
+git config core.ignorecase false
+
+# 设置别名
+git config alias.histroy "log --color --graph --pretty=format:'%C(bold red)%h%C(reset) - %C(bold green)(%cr)%C(bold blue)<%an>%C(reset) -%C(bold yellow)%d%C(reset) %s' --abbrev-commit" --global
+```
+
 
 ## git add 
 
@@ -273,7 +288,7 @@ git history
 ```
 
 
-## git 其他
+## git stash
 
 ```bash
 
