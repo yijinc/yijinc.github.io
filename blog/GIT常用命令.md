@@ -16,7 +16,7 @@ git config user.name yijinc@org.com --local
 git config core.ignorecase false
 
 # 设置别名
-git config alias.histroy "log --color --graph --pretty=format:'%C(bold red)%h%C(reset) - %C(bold green)(%cr)%C(bold blue)<%an>%C(reset) -%C(bold yellow)%d%C(reset) %s' --abbrev-commit" --global
+git config alias.history "log --color --graph --pretty=format:'%C(bold red)%h%C(reset) - %C(bold green)(%cr)%C(bold blue)<%an>%C(reset) -%C(bold yellow)%d%C(reset) %s' --abbrev-commit" --global
 ```
 
 
