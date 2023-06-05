@@ -10,7 +10,7 @@ tags: [git]
 
 # 设置用户名和邮箱（--local 仅在当前仓库设置，全局使用 --global，系统 --system ）
 git config user.name yijinc --local
-git config user.name yijinc@org.com --local
+git config user.email yijinc@org.com --local
 
 # 设置大小写敏感 （需要在每个项目中各自设置 ignorecase）
 git config core.ignorecase false
